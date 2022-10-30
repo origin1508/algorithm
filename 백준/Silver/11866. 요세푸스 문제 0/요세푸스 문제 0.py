@@ -11,10 +11,9 @@ result = []
 
 while len(circle) > 0:
     move += 1
-    temp = circle.popleft()
     if move % k == 0:
-        result.append(temp)
+        result.append(circle.popleft())
     else:
-        circle.append(temp)
+        circle.append(circle.popleft())
 
 print(str(result).replace('[','<').replace(']','>'))
