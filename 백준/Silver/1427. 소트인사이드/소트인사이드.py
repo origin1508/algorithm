@@ -1,4 +1,2 @@
-import sys
-input = sys.stdin.readline
-
-print("".join(sorted(input().strip(), reverse=True)))
+number = sorted(input(), reverse=True)
+print("".join(number))
