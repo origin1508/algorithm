@@ -1,19 +1,11 @@
-import sys
-
-input = sys.stdin.readline
-
-x = input().rstrip()
+x = input()
 count = 0
-while True:
+while len(x) > 1:
   temp = 0
-  y = int(x)
-  if y < 10:
-    break
-  else:
-    for i in x:
-      temp += int(i)
-      x = str(temp)
-    count += 1
+  for i in x:
+    temp += int(i)
+    x = str(temp)
+  count += 1
 
 print(count)
-print("YES" if y % 3 == 0 and y != 0 else "NO")
+print("YES" if int(x) % 3 == 0 else "NO")
