@@ -1,13 +1,13 @@
 def solution(nums):
-    map = {}
+    map = []
     length = len(nums)
     answer = 0
     
     for i in nums:
         if i in map:
-            map[i] += 1
+            continue
         else:
-            map[i] = 1
+            map.append(i)
     
     if length/2 < len(map):
         answer = length//2
