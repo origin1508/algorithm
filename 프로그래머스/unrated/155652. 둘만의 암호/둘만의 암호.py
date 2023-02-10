@@ -1,6 +1,5 @@
 def solution(s, skip, index):
     answer = ''
-    97, 122
     list = [chr(i) for i in range(97, 123)]
     for i in skip:
         list.remove(i)
