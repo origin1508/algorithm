@@ -1,17 +1,9 @@
 def solution(nums):
-    map = []
-    length = len(nums)
-    answer = 0
+    set_nums = set(nums)
     
-    for i in nums:
-        if i in map:
-            continue
-        else:
-            map.append(i)
-    
-    if length/2 < len(map):
-        answer = length//2
+    if len(nums) / 2 < len(set_nums):
+        answer = len(nums) / 2
     else:
-        answer = len(map)
+        answer = len(set_nums)
     
     return answer
