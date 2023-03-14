@@ -8,12 +8,11 @@ def solution(nums):
                 sums.append(nums[i] + nums[j] + nums[k])
     
     for i in sums:
-        check = True
         for j in range(2, int(i ** 0.5) + 1):
             if i % j == 0:
                 check = False
                 break
-        if check:
+        else:
             answer += 1
     
     return answer
