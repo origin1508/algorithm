@@ -35,7 +35,6 @@ def solution(survey, choices):
     
     for s, choice in zip(survey, choices):
         give_score(s[1], s[0], choice)
-        
-    print(category)
+
     
     return get_result()
