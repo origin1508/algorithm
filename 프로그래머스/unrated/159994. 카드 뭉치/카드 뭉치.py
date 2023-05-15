@@ -4,10 +4,8 @@ def solution(cards1, cards2, goal):
     answer = "Yes"
     cards1 = deque(cards1)
     cards2 = deque(cards2)
-    goal = deque(goal)
     
-    while goal:
-        word = goal.popleft()
+    for word in goal:
         if cards1 and cards1[0] == word:
             cards1.popleft()
         elif cards2 and cards2[0] == word:
