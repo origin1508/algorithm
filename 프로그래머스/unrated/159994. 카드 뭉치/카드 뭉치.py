@@ -1,8 +1,7 @@
 from collections import deque
 
 def solution(cards1, cards2, goal):
-    answer = ''
-    flag = True
+    answer = "Yes"
     cards1 = deque(cards1)
     cards2 = deque(cards2)
     goal = deque(goal)
@@ -11,13 +10,10 @@ def solution(cards1, cards2, goal):
         word = goal.popleft()
         if cards1 and cards1[0] == word:
             cards1.popleft()
-            continue
-        
-        if cards2 and cards2[0] == word:
+        elif cards2 and cards2[0] == word:
             cards2.popleft()
-            continue
-        
-        flag = False
-        break
+        else:
+            answer = "No"
+            break
 
-    return "Yes" if flag else "No"
+    return answer
