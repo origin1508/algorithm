@@ -6,10 +6,9 @@ def solution(k, tangerine):
         else:
             tangerine_map[t] = 1
     
-    sorted_tangerine_map = sorted(tangerine_map.items(), key = lambda x: x[1], reverse = True)
     answer = 0
     
-    for size, cnt in sorted_tangerine_map:
+    for cnt in sorted(tangerine_map.values(), reverse = True):
         k -= cnt
         answer += 1
         
