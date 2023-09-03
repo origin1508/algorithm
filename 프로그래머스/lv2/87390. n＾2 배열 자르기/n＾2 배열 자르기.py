@@ -6,6 +6,4 @@ def solution(n, left, right):
         elem = 1 + max(remainder, quotient)
         answer.append(elem)
         
-
-
     return answer
