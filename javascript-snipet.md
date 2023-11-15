@@ -40,8 +40,35 @@ console.log(arr3); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!
 
 ## 문자열 반복하기
 ```javascript
-const str = "A"
+const str = "A";
 
 // repeat() 메서드 이용
 console.log(str.repeat(5)); // AAAAA
 ```
+
+## 배열의 평균 구하기
+```javascript
+const arr = [1, 3, 5, 7, 9];
+
+const avg = arr.reduce((acc, cur) => acc + cur, 0) / arr.length;
+console.log(avg); // 5
+```
+
+## 배열 뒤집기
+```javascript
+// reverse() 메서드 이용 - 원본 배열을 변형
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+arr.reverse();
+console.log(arr); // [7, 6, 5, 4, 3, 2, 1]
+```
+
+```javascript
+// sort() 메서드를 이용 - 원본 배열이 정렬됨
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+arr.sort((a, b) => -1);
+console.log(arr); // [7, 6, 5, 4, 3, 2, 1]
+```
+
+
