@@ -20,3 +20,20 @@ const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
 const fs = requre("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 ```
+
+## 문자열을 배열로 변환
+```javascript
+const str = "hello world!";
+
+// 스프레드 연산자 이용
+const arr1 = [...str];
+console.log(arr1); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]
+
+// split() 메서드 이용
+const arr2 = str.split("");
+console.log(arr2); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]
+
+// Array.from() 메서드 이용
+cosnt arr3 = Array.from(str);
+console.log(arr3); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]
+```
