@@ -37,3 +37,11 @@ console.log(arr2); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!
 cosnt arr3 = Array.from(str);
 console.log(arr3); // ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]
 ```
+
+## 문자열 반복하기
+```javascript
+const str = "A"
+
+// repeat() 메서드 이용
+console.log(str.repeat(5)); // AAAAA
+```
