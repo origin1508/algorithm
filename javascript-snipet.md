@@ -85,4 +85,23 @@ console.log(num1 % 1 === 0); // false
 console.log(num2 % 1 === 0); // true
 ```
 
+## 문자열 치환하기
+```javascript
+const str = "hello world";
+
+// replace() 메서드 이용 - 새로운 문자열을 반환
+const newStr1 = str.replace("world", "javascript");
+console.log(newStr1); // hello javascript
+
+// 정규표현식과 함께 이용
+// 정규표현식의 플래그가 g라면 모든 문자열을 치환한다.
+// 플래그가 i라면 대소문자를 구분하지 않고 치환한다.
+const re = new RegExp("javascript", "g");
+// or const re = /javascipt/g;
+// or const re = new RegExp(/javascript/, "g");
+
+const newStr2 = str.replace(re, "world");
+console.log(newStr2); // hello world;
+``
+
 
