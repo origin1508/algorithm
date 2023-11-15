@@ -71,4 +71,18 @@ arr.sort((a, b) => -1);
 console.log(arr); // [7, 6, 5, 4, 3, 2, 1]
 ```
 
+## 정수 판별
+```javascript
+const num1 = 9.99;
+const num2 = 99;
+
+// Number.isInteger() 메서드 이용
+console.log(Number.isInteger(num1)); // false
+console.log(Number.isInteger(num2)); // true
+
+// 나머지 연산자 이용
+console.log(num1 % 1 === 0); // false
+console.log(num2 % 1 === 0); // true
+```
+
 
