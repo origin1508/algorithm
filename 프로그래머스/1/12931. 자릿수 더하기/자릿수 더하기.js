@@ -1,10 +1,5 @@
 function solution(n)
 {
-    var answer = 0;
-    const nString = n.toString()
-    for (let i = 0; i < nString.length; i++) {
-        answer += Number(nString[i])
-    }
-
+    var answer = [...n.toString()].reduce((acc, cur) => acc += Number(cur), 0)
     return answer;
 }
