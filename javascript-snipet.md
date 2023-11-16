@@ -102,6 +102,21 @@ const re = new RegExp("javascript", "g");
 
 const newStr2 = str.replace(re, "world");
 console.log(newStr2); // hello world;
-``
+```
 
+## 대소문자 판별
+```javascript
+const str = "AaBbCcddd";
 
+// toUpperCase() or toLowerCase() 이용
+const isUpper = (str) => [...str].map(v => v === v.toUpperCase() ? "upper" : "lower");
+console.log(isUpper(str)); // ["upper", "lower", "upper", "lower", "upper", "lower", "lower", "lower", "lower"]
+
+// match() 메서드 이용
+const re = new RegExp("[a-z]");
+// const re = /[A-Z]/;
+// const re = new RegExp(/[a-z]/);
+
+const isLower = (str) => [...str].map(v => v.match(re) ? "lower" : "upper");
+console.log(isLower(str)); //["upper", "lower", "upper", "lower", "upper", "lower", "lower", "lower", "lower"]
+```
