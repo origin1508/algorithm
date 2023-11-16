@@ -120,3 +120,18 @@ const re = new RegExp("[a-z]");
 const isLower = (str) => [...str].map(v => v.match(re) ? "lower" : "upper");
 console.log(isLower(str)); //["upper", "lower", "upper", "lower", "upper", "lower", "lower", "lower", "lower"]
 ```
+
+## 배열의 마지막 요소 가져오기
+```javascript
+const arr = ["a", "b", "c", "d", "e"];
+
+console.log(arr[arr.length - 1]); // e
+
+// at() 메서드 이용
+console.log(arr.at(-1)); // e
+
+// silce() 메서드 이용
+console.log(arr.slice(-1)); // ["e"]
+// -2를 넣으면 뒤에서 두번째 원소까지 가져온다
+console.log(arr.slice(-2)); // ["d", "e"]
+```
