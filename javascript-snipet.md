@@ -156,3 +156,25 @@ console.log(typeof str1 === "string"); // ture
 console.log(typeof str2 === "string"); // ture
 console.log(typeof str3 === "string"); // ture
 ```
+## 배열 회전시키기
+`pop()`메서드는 배열의 **맨 뒤** 요소를 제거하고 제거된 요소를 반환  
+`push()`메서드는 배열의 **맨 뒤에** 요소를 추가하고, 새로운 길이를 반환  
+`shift()`메서드는 배열의 **맨 앞** 요소를 제거하고 제거된 요소를 반환  
+`unshift()`메서드는 배열의 **맨 앞에** 요소를 추가하고, 새로운 길이를 반환
+```javascript
+// left
+const arr = [1, 2, 3, 4, 5];
+
+const backward = arr.shift();
+arr.push(backward);
+console.log(arr); [2, 3, 4, 5, 1]
+```
+
+```javascript
+// right
+const arr = [1, 2, 3, 4, 5];
+
+const forward = arr.pop();
+arr.unshift(forward);
+console.log(arr); [5, 1, 2, 3, 4]
+```
