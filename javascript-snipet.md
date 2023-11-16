@@ -44,6 +44,10 @@ const str = "A";
 
 // repeat() 메서드 이용
 console.log(str.repeat(5)); // AAAAA
+
+// Array.fill() 메서드 이용
+console.log(Array(5).fill(str).join(""); // AAAAA
+console.log(Array(6).join(str)); // AAAAA
 ```
 
 ## 배열의 평균 구하기
