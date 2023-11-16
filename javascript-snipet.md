@@ -139,3 +139,20 @@ console.log(arr.slice(-1)); // ["e"]
 // -2를 넣으면 뒤에서 두번째 원소까지 가져온다
 console.log(arr.slice(-2)); // ["d", "e"]
 ```
+## 숫자를 문자열로 변환
+```javascript
+const num = 99
+
+// 빈 문자열 붙이기
+const str1 = num + "";
+
+// 템플릿 리터럴 이용
+const str2 = `${num}`;
+
+// toString() 메서드 이용
+const str3 = num.toString();
+
+console.log(typeof str1 === "string"); // ture
+console.log(typeof str2 === "string"); // ture
+console.log(typeof str3 === "string"); // ture
+```
