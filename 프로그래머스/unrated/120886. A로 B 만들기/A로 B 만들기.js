@@ -8,5 +8,4 @@ function solution(before, after) {
         if (afterArr.length === 0) return 1
     }
     return answer;
-    return answer;
 }
