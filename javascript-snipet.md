@@ -139,6 +139,7 @@ console.log(arr.slice(-1)); // ["e"]
 // -2를 넣으면 뒤에서 두번째 원소까지 가져온다
 console.log(arr.slice(-2)); // ["d", "e"]
 ```
+
 ## 숫자를 문자열로 변환
 ```javascript
 const num = 99
@@ -156,6 +157,7 @@ console.log(typeof str1 === "string"); // ture
 console.log(typeof str2 === "string"); // ture
 console.log(typeof str3 === "string"); // ture
 ```
+
 ## 배열 회전시키기
 `pop()`메서드는 배열의 **맨 뒤** 요소를 제거하고 제거된 요소를 반환  
 `push()`메서드는 배열의 **맨 뒤에** 요소를 추가하고, 새로운 길이를 반환  
@@ -177,4 +179,12 @@ const arr = [1, 2, 3, 4, 5];
 const forward = arr.pop();
 arr.unshift(forward);
 console.log(arr); [5, 1, 2, 3, 4]
+```
+
+## 옵셔널 체이닝
+```javscript
+const user = {};
+
+console.log(user.address.street); // TypeError: Cannot read properties of undefined (reading 'street')
+console.log(user?.address?.street); // undefined
 ```
