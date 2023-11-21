@@ -3,7 +3,12 @@ function solution(progresses, speeds) {
     let count = 1;
     const workingTime = progresses.map((el, index) => Math.ceil((100 - el) / speeds[index]))
     const temp = [workingTime.shift()]
-    while (temp.length > 0) {
+    while (true) {
+        if (workingTime.length == 0) {
+            answer.push(count)
+            break
+        }
+        
         const prev = temp.shift()
         const next = workingTime.shift()
         if (prev >= next) {
@@ -15,10 +20,6 @@ function solution(progresses, speeds) {
             answer.push(count)
             count = 1
         }
-        if (workingTime.length == 0) {
-                answer.push(count)
-                break
-            }
     }
     return answer
 }
