@@ -4,9 +4,7 @@ function solution(board) {
         for (let i = 0; i < check.length; i++) {
             const nextX = x + check[i][0]
             const nextY = y + check[i][1]
-            if (nextX < 0 || nextX >= board.length) continue
-            if (nextY < 0 || nextY >= board[0].length) continue
-            if (board[nextX][nextY] !== 1) board[nextX][nextY] = 2
+            if (board[nextX]?.[nextY] === 0) board[nextX][nextY] = 2
         }
     }
     for (let x = 0; x < board.length; x++) {
