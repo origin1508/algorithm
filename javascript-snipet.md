@@ -188,3 +188,24 @@ const user = {};
 console.log(user.address.street); // TypeError: Cannot read properties of undefined (reading 'street')
 console.log(user?.address?.street); // undefined
 ```
+
+## 조합
+```javascript
+const arr = ["a", "b", "c"];
+
+const getCombination = (arr, num) => {
+  if (num === 1) return arr.map(el => [el]);
+  const result = [];
+
+  arr.forEach((el, idx, self) => {
+    const select = el;
+    const remain = self.slice(idx + 1);
+
+    const combination = getCombination(remain, num - 1).map(el => [select, ...el]);
+    result.push(...combination);
+  })
+  return result;
+};
+
+console.log(getCombination(arr, 2)); // [["a", "b"], ["a", "c"], ["b", "c"]]
+```
