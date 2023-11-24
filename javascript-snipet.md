@@ -209,3 +209,81 @@ const getCombination = (arr, num) => {
 
 console.log(getCombination(arr, 2)); // [["a", "b"], ["a", "c"], ["b", "c"]]
 ```
+
+## 힙
+```javascript
+class MaxHeap {
+  constructor() {
+    this.values = [];
+  }
+
+  swap(idx1, idx2) {
+    [this.values[idx1], this.values[idx2]] = [
+      this.values[idx2],
+      this.values[idx1],
+    ];
+  }
+
+  insert(element) {
+    this.values.push(element);
+    this.bubbleUp();
+  }
+
+  bubbleUp() {
+    let idx = this.values.length - 1;
+    const element = this.values[idx];
+    while (idx > 0) {
+      let parentIdx = Math.floor((idx - 1) / 2);
+      let parent = this.values[parentIdx];
+      if (element <= parent) break;
+      this.swap(idx, parentIdx);
+      idx = parentIdx;
+    }
+  }
+
+  remove() {
+    const max = this.values[0];
+    if (this.values.length === 0) return max;
+
+    const end = this.values.pop();
+    this.values[0] = end;
+    this.bubbleDown();
+    return max;
+  }
+
+  bubbleDown() {
+    let idx = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while (true) {
+      let leftChildIdx = 2 * idx + 1;
+      let rightChildIdx = 2 * idx + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild > element) {
+          swap = leftChildIdx;
+        }
+      }
+
+      if (rightChildIdx < length) {
+        rightChild = this.values[rightChildIdx];
+        if (
+          (swap === null && rightChild > element) ||
+          (swap !== null && rightChild > leftChild)
+        ) {
+          swap = rightChildIdx;
+        }
+      }
+      if (swap === null) break;
+      this.swap(idx, swap);
+      idx = swap;
+    }
+  }
+}
+
+let heap = new MaxHeap();
+
+```
