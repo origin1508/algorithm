@@ -243,11 +243,11 @@ class MaxHeap {
 
   remove() {
     const max = this.values[0];
-    if (this.values.length === 0) return max;
-
     const end = this.values.pop();
-    this.values[0] = end;
-    this.bubbleDown();
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.bubbleDown();
+    }
     return max;
   }
 
