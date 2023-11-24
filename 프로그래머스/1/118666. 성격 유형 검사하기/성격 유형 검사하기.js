@@ -1,5 +1,6 @@
 function solution(survey, choices) {
     var answer = '';
+    const type = [["R", "T"], ["C", "F"], ["J", "M"], ["A", "N"]]
     const result = {"R": 0,"T":0, "C": 0, "F": 0, "J": 0, "M": 0, "A": 0, "N": 0};
     survey.forEach((type, idx) => {
         const [disagree, agree] = type.split("");
@@ -7,6 +8,8 @@ function solution(survey, choices) {
         if (score < 0) result[disagree] -= score;
         else result[agree] += score;
     })
+    
+    
     
     if (result["R"] >= result["T"]) answer += "R"
     else answer += "T"
@@ -20,5 +23,7 @@ function solution(survey, choices) {
     if (result["A"] >= result["N"]) answer += "A"
     else answer += "N"
     
-    return answer;
+    // type.map(([a, b]) => result[a] >= [result[b]] ? a : b).join("");
+    
+    return answer
 }
