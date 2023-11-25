@@ -364,3 +364,144 @@ class Node {
 
 let ER = new PriorityQueue()
 ```
+
+## 단일 연결 리스트
+```javascript
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class SiglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+
+    let cur = this.head;
+    let newTail;
+    while (cur.next) {
+      newTail = cur;
+      cur = cur.next;
+    }
+    if (newTail) {
+      this.tail = newTail;
+      this.tail.next = null;
+    } else {
+      this.head = null;
+      this.tail = null;
+    }
+
+    this.length--;
+    return cur;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+
+    let curHead = this.head;
+    this.head = curHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return curHead;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let count = 0;
+    let cur = this.head;
+    while (count !== index) {
+      cur = cur.next;
+      count++;
+    }
+    return cur;
+  }
+
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+
+    let prevNode = this.get(index - 1);
+    let newNode = new Node(val);
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let prevNode = this.get(index - 1);
+    let removedNode = prevNode.next;
+    prevNode.next = removedNode.next;
+    this.length--;
+
+    return removedNode;
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let prev = null;
+    let next;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+}
+
+let list = new SiglyLinkedList();
+```
