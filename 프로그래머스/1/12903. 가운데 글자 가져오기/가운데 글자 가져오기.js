@@ -1,11 +1,6 @@
 function solution(s) {
     var answer = '';
-    const idx = s.length / 2
-    if (idx === Math.floor(idx)) {
-        answer = s.slice(idx - 1, idx + 1)
-    } else {
-        answer = s[Math.floor(idx)]
-    }
-    
+    const idx = Math.floor(s.length / 2)
+    answer = s.length % 2 === 0 ? s[idx - 1] + s[idx] : s[idx]
     return answer;
 }
