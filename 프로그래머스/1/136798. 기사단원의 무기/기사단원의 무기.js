@@ -9,6 +9,10 @@ function divisorCounter(num) {
     return result.size
 } 
 function solution(number, limit, power) {
-    var answer = new Array(number).fill(0).map((_, i) => divisorCounter(i + 1)).reduce((acc, cur) => cur > limit ? acc += power : acc += cur,0)
+    var answer = 0;
+    for (let i = 1; i <= number; i++) {
+        const count = divisorCounter(i)
+        answer += count > limit ? power : count
+    }
     return answer;
 }
