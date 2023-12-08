@@ -7,7 +7,7 @@ function solution(k, m, score) {
         idx += m
     }
     
-    answer = answer.reduce((acc, cur) => acc += Math.min(...cur) * m, 0)
+    answer = answer.reduce((acc, cur) => acc += cur.at(-1) * m, 0)
     
     return answer;
 }
