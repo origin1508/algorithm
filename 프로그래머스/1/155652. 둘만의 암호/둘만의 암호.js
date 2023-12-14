@@ -1,5 +1,4 @@
 function solution(s, skip, index) {
-    var answer = '';
     const char = []
     const aCode = "a".charCodeAt();
     const zCode = "z".charCodeAt();
@@ -9,7 +8,7 @@ function solution(s, skip, index) {
         char.push(c)
     }
     
-    answer = [...s].map((el) => {
+    const answer = [...s].map((el) => {
         const newIdx = (char.indexOf(el) + index) % char.length
         return char[newIdx]
     }).join("")
