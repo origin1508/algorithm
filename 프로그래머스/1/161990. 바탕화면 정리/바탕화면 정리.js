@@ -1,6 +1,5 @@
 function solution(wallpaper) {
-    var answer = [];
-    let start = [999, 999];
+    let start = [Infinity, Infinity];
     let end = [0, 0];
     wallpaper.forEach((row, i) => {
         [...row].forEach((el, j) => {
