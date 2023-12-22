@@ -14,36 +14,36 @@ function solution(players, callings) {
         }
         prev = player
     })
-    
+
     const swap = (call) => {
         const prev = playerList[call].prev
         const next = playerList[call].next
         const prevPrev = playerList[prev].prev
-        
+
         if (prevPrev === null) {
             first = call
         } else {
             playerList[prevPrev].next = call
         }
-        
+
         if (next !== null) {
             playerList[next].prev = prev
         }
-        
+
         playerList[call].prev = prevPrev
         playerList[call].next = prev
         playerList[prev].prev = call
         playerList[prev].next = next
 
     }
-    
+
     callings.forEach(call => swap(call))
-    
+
     while(true) {
         answer.push(first)
         first = playerList[first].next
         if (first === null) break
     }
-    
+
     return answer;
 }
