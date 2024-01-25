@@ -32,7 +32,7 @@ class Heap {
         
         if (this.value.length > 0) {
             this.value[0] = end
-            this.bubbleDown()   
+            this.bubbleDown()
         }
         return min
     }
@@ -47,14 +47,14 @@ class Heap {
             let leftChild, rightChild
             let swap = null
             
-            if (leftChildIdx < length) {
+            if (leftChild < length) {
                 leftChild = this.value[leftChildIdx];
                 if (leftChild < el) {
                     swap = leftChildIdx;
                 }
             }
             
-            if (rightChildIdx < length) {
+            if (rightChild < length) {
                 rightChild = this.value[rightChildIdx];
                 if (swap === null && rightChild < el || swap !== null && rightChild < leftChild) {
                     swap = rightChildIdx
@@ -64,13 +64,14 @@ class Heap {
             if (swap === null) break
             this.swap(idx, swap)
             idx = swap;
+            console.log(this.value)
         }
     }
     
      mix(k) {
+        let min = -Infinity;
         let answer = 0
         let flag = true
-        let min = this.value[0]
         while(min < k) {
             if (this.value.length === 1) {
                 flag = false
@@ -79,8 +80,8 @@ class Heap {
             const first = this.heappop()
             const second = this.heappop()
             this.push(first + second * 2)
+            
             answer++
-            min = this.value[0]
         }
         return flag ? answer : -1
     }
@@ -89,6 +90,7 @@ class Heap {
 function solution(scoville, K) {
     const minHeap = new Heap()
     scoville.forEach(el => minHeap.push(el))
+    console.log(minHeap.heappop())
     const answer = minHeap.mix(K)
     return answer;
 }
