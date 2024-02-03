@@ -1,10 +1,10 @@
 # [level 2] [3차] 파일명 정렬 - 17686 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/17686) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/17686#qna) 
 
 ### 성능 요약
 
-메모리: 39.2 MB, 시간: 12.55 ms
+메모리: 38 MB, 시간: 7.72 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 2월 6일 12:3:44
+2024년 2월 6일 12:13:22
 
 ### 문제 설명
 
