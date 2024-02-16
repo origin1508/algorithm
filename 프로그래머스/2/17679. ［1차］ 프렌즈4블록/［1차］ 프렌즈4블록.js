@@ -34,7 +34,6 @@ function solution(m, n, board) {
                     if (graph[k - 1][y] !== 0) {
                         [graph[k][y], graph[k - 1][y]] = [graph[k - 1][y], graph[k][y]]
                     }
-                    break
                 }
             }
         }
