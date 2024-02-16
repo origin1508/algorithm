@@ -34,6 +34,7 @@ function solution(m, n, board) {
                     if (graph[k - 1][y] !== 0) {
                         [graph[k][y], graph[k - 1][y]] = [graph[k - 1][y], graph[k][y]]
                     }
+                    break
                 }
             }
         }
@@ -41,6 +42,6 @@ function solution(m, n, board) {
     answer = graph.reduce((acc, cur) => {
         return acc + cur.filter(el => el === 0).length
     }, 0)
-    console.log(graph)
+    
     return answer;
 }
