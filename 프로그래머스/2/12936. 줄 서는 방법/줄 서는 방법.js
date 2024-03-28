@@ -11,7 +11,6 @@ function solution(n, k) {
         const num = numbers[idx]
         numbers.splice(idx, 1)
         answer.push(num)
-        
     }
     
     return answer;
