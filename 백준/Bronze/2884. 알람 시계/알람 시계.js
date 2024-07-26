@@ -1,7 +1,7 @@
 const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().split(' ');
 
-let [hour, minute] = input;
+let [hour, minute] = input.map(it => parseInt(it));
 
 minute -= 45;
 if (minute < 0) {
